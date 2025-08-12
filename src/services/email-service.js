@@ -20,7 +20,9 @@ async function sendEmail(mailFrom, mailTo, subject, text) {
 
 async function createTicket(data) {
     try {
+        console.log("This is data", data);
         const response = await ticketRepo.create(data);
+        console.log(response);
         return response;
     } catch(error) {
         console.log(error);
