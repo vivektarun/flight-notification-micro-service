@@ -28,7 +28,18 @@ async function createTicket(data) {
     }
 }
 
+async function getPendingEmails() {
+    try {
+        const response = await ticketRepo.getPendingTickets();
+        return response;
+    } catch(error) {
+        console.log(error);
+        throw error;
+    }
+}
+
 module.exports = {
     sendEmail,
     createTicket,
+    getPendingEmails,
 }
